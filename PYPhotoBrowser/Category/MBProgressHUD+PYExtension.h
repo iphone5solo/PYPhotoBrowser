@@ -3,7 +3,6 @@
 #if __has_include(<MBProgressHUD/MBProgressHUD.h>)
 #import <MBProgressHUD/MBProgressHUD.h>
 #else
-#warning asdfasd
 #import "MBProgressHUD.h"
 #endif
 
