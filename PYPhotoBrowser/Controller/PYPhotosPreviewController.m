@@ -106,6 +106,41 @@
         [self setNeedsStatusBarAppearanceUpdate];
         self.navigationController.navigationBar.py_y = self.statusBarHidden ? -self.navigationController.navigationBar.py_height : [UIApplication sharedApplication].statusBarFrame.size.height;
     } completion:nil];
+    
+    /* 改动方案1
+    [UIView animateWithDuration:duration animations:^{
+        self.navBarAnimating = YES;
+        self.statusBarHidden = self.navigationController.navigationBar.py_y > 0;
+        //[self setNeedsStatusBarAppearanceUpdate];
+        self.navigationController.navigationBar.py_y = self.statusBarHidden ? -self.navigationController.navigationBar.py_height : [UIApplication sharedApplication].statusBarFrame.size.height;
+    } completion:nil];
+    */
+    
+    /* 改动方案2
+    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    CGFloat navBarHeight = self.navigationController.navigationBar.py_height;
+    CGFloat proportion = statusBarHeight/(statusBarHeight+navBarHeight);
+    self.statusBarHidden = self.navigationController.navigationBar.py_y >= 0;
+    if (!self.statusBarHidden) {
+        proportion = 1-proportion;
+    }
+    [UIView animateWithDuration:duration*proportion animations:^{
+        self.navBarAnimating = YES;
+        //self.navigationController.navigationBar.py_y = self.statusBarHidden ? 0 : statusBarHeight-navBarHeight;
+        self.navigationController.navigationBar.py_y = 0;
+        if (self.statusBarHidden) {
+            [self setNeedsStatusBarAppearanceUpdate];
+        }
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:duration*(1-proportion) animations:^{
+            self.navigationController.navigationBar.py_y = self.statusBarHidden ? -(navBarHeight) : statusBarHeight;
+            if (!self.statusBarHidden) {
+                [self setNeedsStatusBarAppearanceUpdate];
+            }
+        } completion:nil];
+    }];
+    */
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.navBarAnimating = NO;
     });
@@ -194,14 +229,17 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     PYPhotoCell *cell  = [PYPhotoCell cellWithCollectionView:collectionView indexPath:indexPath];
+    PYPhoto *photo = [[PYPhoto alloc] init];
     id image = self.selectedPhotoView.images[indexPath.item];
     if ([image isKindOfClass:[UIImage class]]) {
-        cell.image = image;
+        photo.originalImage = image;
     } else if ([image isKindOfClass:[PYPhoto class]]) {
-        cell.photo = (PYPhoto*)image;
+        photo = (PYPhoto *)image;
     } else if ([image isKindOfClass:[NSString class]]) {
-        [cell.photoView sd_setImageWithURL:[NSURL URLWithString:image] placeholderImage:PYPlaceholderImage];
+        photo.original_pic = (NSString *)image;
     }
+    // 设置图片
+    cell.photo = photo;
     
     cell.photoView.isPreview = YES;
     return cell;

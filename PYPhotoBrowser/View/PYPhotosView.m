@@ -322,15 +322,20 @@ static NSInteger _photosViewCount;
         photoView.images = images;
         if (i < imageCount) {
             photoView.hidden = NO;
-            // 设置图片
+            PYPhoto *photo = [[PYPhoto alloc] init];
             id image = images[i];
             if ([image isKindOfClass:[UIImage class]]) {
-                photoView.image = image;
+                //photoView.image = image;
+                photo.originalImage = image;
             } else if ([image isKindOfClass:[PYPhoto class]]) {
-                photoView.photo = (PYPhoto *)image;
+                //photoView.photo = (PYPhoto *)image;
+                photo = (PYPhoto *)image;
             } else if ([image isKindOfClass:[NSString class]]) {
-                [photoView sd_setImageWithURL:[NSURL URLWithString:image] placeholderImage:PYPlaceholderImage];
+                //[photoView sd_setImageWithURL:[NSURL URLWithString:image] placeholderImage:PYPlaceholderImage];
+                photo.original_pic = (NSString *)image;
             }
+            // 设置图片
+            photoView.photo = photo;
         }else{
             photoView.hidden = YES;
         }
