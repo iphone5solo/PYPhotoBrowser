@@ -71,6 +71,8 @@ typedef NS_ENUM(NSInteger, PYPhotosViewPageType) { // 分页类型
 
 /** 占位图 */
 @property (nonatomic, strong) UIImage *placeholderImage;
+/** 添加按钮图片 */
+@property (nonatomic, strong) UIImage *addImageButtonImage;
 /** 网络图片模型数组 */
 @property (nonatomic, copy) NSArray<PYPhoto *> *photos;
 /** 网络图片地址数组（缩略图） */
