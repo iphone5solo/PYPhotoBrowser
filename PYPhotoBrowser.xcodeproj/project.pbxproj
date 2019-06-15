@@ -134,13 +134,13 @@
 		7CB64E0722B4E50A002AC8C6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7CB64E0822B4E50A002AC8C6 /* PYPhotosView.m */,
 				7CB64E0922B4E50A002AC8C6 /* PYPhotoBrowseView.h */,
-				7CB64E0A22B4E50A002AC8C6 /* PYPhotoCell.h */,
-				7CB64E0B22B4E50A002AC8C6 /* PYPhotoView.h */,
 				7CB64E0C22B4E50A002AC8C6 /* PYPhotoBrowseView.m */,
-				7CB64E0D22B4E50A002AC8C6 /* PYPhotosView.h */,
+				7CB64E0A22B4E50A002AC8C6 /* PYPhotoCell.h */,
 				7CB64E0E22B4E50A002AC8C6 /* PYPhotoCell.m */,
+				7CB64E0D22B4E50A002AC8C6 /* PYPhotosView.h */,
+				7CB64E0822B4E50A002AC8C6 /* PYPhotosView.m */,
+				7CB64E0B22B4E50A002AC8C6 /* PYPhotoView.h */,
 				7CB64E0F22B4E50A002AC8C6 /* PYPhotoView.m */,
 			);
 			path = View;
@@ -158,10 +158,10 @@
 		7CB64E1322B4E50A002AC8C6 /* DACircularProgress */ = {
 			isa = PBXGroup;
 			children = (
-				7CB64E1422B4E50A002AC8C6 /* DALabeledCircularProgressView.m */,
+				7CB64E1722B4E50A002AC8C6 /* DACircularProgressView.h */,
 				7CB64E1522B4E50A002AC8C6 /* DACircularProgressView.m */,
 				7CB64E1622B4E50A002AC8C6 /* DALabeledCircularProgressView.h */,
-				7CB64E1722B4E50A002AC8C6 /* DACircularProgressView.h */,
+				7CB64E1422B4E50A002AC8C6 /* DALabeledCircularProgressView.m */,
 			);
 			path = DACircularProgress;
 			sourceTree = "<group>";
@@ -169,14 +169,14 @@
 		7CB64E1822B4E50A002AC8C6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7CB64E1922B4E50A002AC8C6 /* PYPhotosReaderController.h */,
 				7CB64E1A22B4E50A002AC8C6 /* PYPhotosNavigationController.h */,
-				7CB64E1B22B4E50A002AC8C6 /* PYPhotosViewController.m */,
-				7CB64E1C22B4E50A002AC8C6 /* PYPhotosPreviewController.h */,
-				7CB64E1D22B4E50A002AC8C6 /* PYPhotosReaderController.m */,
 				7CB64E1E22B4E50A002AC8C6 /* PYPhotosNavigationController.m */,
+				7CB64E1C22B4E50A002AC8C6 /* PYPhotosPreviewController.h */,
 				7CB64E1F22B4E50A002AC8C6 /* PYPhotosPreviewController.m */,
+				7CB64E1922B4E50A002AC8C6 /* PYPhotosReaderController.h */,
+				7CB64E1D22B4E50A002AC8C6 /* PYPhotosReaderController.m */,
 				7CB64E2022B4E50A002AC8C6 /* PYPhotosViewController.h */,
+				7CB64E1B22B4E50A002AC8C6 /* PYPhotosViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -184,10 +184,10 @@
 		7CB64E2122B4E50B002AC8C6 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				7CB64E2222B4E50B002AC8C6 /* PYProgressView.m */,
 				7CB64E2322B4E50B002AC8C6 /* PYPhotoBrowserConst.h */,
-				7CB64E2422B4E50B002AC8C6 /* PYProgressView.h */,
 				7CB64E2522B4E50B002AC8C6 /* PYPhotoBrowserConst.m */,
+				7CB64E2422B4E50B002AC8C6 /* PYProgressView.h */,
+				7CB64E2222B4E50B002AC8C6 /* PYProgressView.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -195,10 +195,10 @@
 		7CB64E2722B4E50B002AC8C6 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				7CB64E2822B4E50B002AC8C6 /* UIView+PYExtension.m */,
 				7CB64E2922B4E50B002AC8C6 /* MBProgressHUD+PYExtension.h */,
-				7CB64E2A22B4E50B002AC8C6 /* UIView+PYExtension.h */,
 				7CB64E2B22B4E50B002AC8C6 /* MBProgressHUD+PYExtension.m */,
+				7CB64E2A22B4E50B002AC8C6 /* UIView+PYExtension.h */,
+				7CB64E2822B4E50B002AC8C6 /* UIView+PYExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
