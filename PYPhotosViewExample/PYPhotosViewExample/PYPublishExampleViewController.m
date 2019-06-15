@@ -5,8 +5,7 @@
 //
 
 #import "PYPublishExampleViewController.h"
-#import "PYPhotosView.h"
-#import "PYPhotosPreviewController.h"
+#import <PYPhotoBrowser/PYPhotoBrowser.h>
 
 @interface PYPublishExampleViewController () <PYPhotosViewDelegate>
 

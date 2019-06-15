@@ -10,7 +10,7 @@
 #import "PYPhotoCell.h"
 #import "PYPhoto.h"
 #import "PYPhotoBrowserConst.h"
-#import "UIImageView+WebCache.h"
+#import <SDWebImage/SDWebImage.h>
 
 @interface PYPhotosPreviewController ()<UIActionSheetDelegate, UICollectionViewDelegateFlowLayout>
 

@@ -11,7 +11,7 @@
 #import "PYPhotosViewController.h"
 #import "PYPhotosReaderController.h"
 #import "PYPhotosPreviewController.h"
-#import "UIImageView+WebCache.h"
+#import <SDWebImage/SDWebImage.h>
 NS_ASSUME_NONNULL_BEGIN
 @interface PYPhotosView()
 

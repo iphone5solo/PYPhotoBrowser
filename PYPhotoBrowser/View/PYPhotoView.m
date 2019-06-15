@@ -5,7 +5,7 @@
 //
 
 #import "PYPhotoView.h"
-#import "UIImageView+WebCache.h"
+#import <SDWebImage/SDWebImage.h>
 #import "PYPhoto.h"
 #import "PYPhotosView.h"
 #import "PYPhotoBrowserConst.h"
