@@ -89,4 +89,9 @@
     NSLog(@"进入预览图片");
 }
 
+- (void)photosView:(PYPhotosView *)photosView didDeleteImageIndex:(NSInteger)imageIndex
+{
+    NSLog(@"%@", @(imageIndex));
+}
+
 @end

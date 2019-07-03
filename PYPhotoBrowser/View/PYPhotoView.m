@@ -578,6 +578,10 @@ static CGSize originalSize;
 {
     [self.images removeObjectAtIndex:self.tag];
     self.photosView.images = self.images;
+    
+    if ([self.photosView.delegate respondsToSelector:@selector(photosView:didDeleteImageIndex:)]) {
+        [self.photosView.delegate photosView:self.photosView didDeleteImageIndex:self.tag];
+    }
 }
 
 - (void)layoutSubviews
