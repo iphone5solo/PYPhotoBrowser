@@ -1,5 +1,14 @@
-osx_image: xcode10
+osx_image: xcode10.2
 language: objective-c
-xcode_workspace: PYPhotosViewExample/PYPhotosViewExample.xcodeproj
-xcode_schemes: PYPhotosViewExample
+xcode_project: PYPhotosViewExample/PYPhotosViewExample.xcodeproj
+xcode_scheme: PYPhotosViewExample
+
+cache:
+  directories:
+    - Carthage
+
+before_install:
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
+  - carthage bootstrap --verbose --no-use-binaries --platform iOS --cache-builds
 
